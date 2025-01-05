@@ -5,3 +5,13 @@
 li{
   cursor: pointer;
 }
+.ant-modal-content{
+  background-color: #712cf9 !important;
+  color:  white !important;
+}
+.ant-modal-header{
+  background-color: transparent !important;
+}
+.ant-modal-title{
+  color:  white !important;
+}
