@@ -10,6 +10,7 @@ import { DownOutlined, SmileOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 import Moon from '@/icons/Moon';
 import Sun from '@/icons/Sun';
+import Search from '@/icons/Search';
 
 function Header() {
     const items = [
@@ -131,7 +132,8 @@ function Header() {
                             </ul>
                         </div>
                     </div>
-                    <div className='hidden sm:inline md:inline'>
+                    <div className='hidden sm:flex md:flex  items-center gap-6'>
+                        <Search isForOpenModal={true}/>
                         <MobileMenu toggleShowMobileMenu={toggleShowMobileMenu} />
                     </div>
                 </div>
