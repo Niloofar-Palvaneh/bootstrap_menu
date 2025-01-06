@@ -2,17 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-li{
+body {
+  /* background-color: white; */
+  color: black;
+  background: rgb(219, 219, 219);
+  background: radial-gradient(circle, rgba(219, 219, 219, 0.34226190476190477) 0%, rgba(255, 255, 255, 0) 45%, rgba(247, 255, 161, 0.46271008403361347) 100%);
+
+}
+
+/* استایل‌های حالت تاریک */
+body.dark-cc {
+  color: white;
+  background: rgb(0, 0, 0);
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.9136904761904762) 57%, rgba(88, 65, 202, 0.9417016806722689) 86%, rgba(247, 255, 161, 0.8968837535014006) 100%);
+}
+
+
+
+li {
   cursor: pointer;
 }
-.ant-drawer-content{
+
+.ant-drawer-content {
   background-color: #712cf9 !important;
-  color:  white !important;
+  color: white !important;
 }
-.ant-drawer-header-title{
+
+.ant-drawer-header-title {
   justify-content: space-between !important;
   flex-direction: row-reverse !important;
 }
+
 :where(.css-dev-only-do-not-override-161f05s).ant-drawer .ant-drawer-title {
   flex: 0 !important;
 }

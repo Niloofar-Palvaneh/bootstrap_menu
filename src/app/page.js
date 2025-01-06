@@ -1,5 +1,6 @@
 "use client"
 import ArrowRight from "@/icons/ArrowRight";
+import Book from "@/icons/Book";
 import Copy from "@/icons/copy";
 import Image from "next/image";
 
@@ -10,10 +11,10 @@ export default function Home() {
   const handleCopy = () => {
     navigator.clipboard.writeText(textToCopy)
       .then(() => {
-        alert("copy"); 
+        alert("copy");
       })
       .catch(err => {
-        console.error("error" , err);
+        console.error("error", err);
       });
   };
   return (
@@ -34,13 +35,17 @@ export default function Home() {
             <p className="text-center">
               Powerful, extensible, and feature-packed frontend toolkit. Build and customize with Sass, utilize prebuilt grid system and components, and bring projects to life with powerful JavaScript plugins.
             </p>
-            <div className="w-full">
+            <div className="w-full flex flex-col gap-4 mt-8">
               <div className="border p-2 rounded flex relative items-center justify-center ">
                 <span className="opacity-50  mr-4">$</span>
                 <h3>{textToCopy}</h3>
                 <div className="absolute right-2 cursor-pointer" onClick={handleCopy} >
                   <Copy />
                 </div>
+              </div>
+              <div className="border p-2 rounded flex bg-[#712cf9] text-white font-bold gap-2 items-center justify-center ">
+                <Book />
+                <h3>Read the docs</h3>
               </div>
             </div>
           </div>
