@@ -5,13 +5,14 @@
 li{
   cursor: pointer;
 }
-.ant-modal-content{
+.ant-drawer-content{
   background-color: #712cf9 !important;
   color:  white !important;
 }
-.ant-modal-header{
-  background-color: transparent !important;
+.ant-drawer-header-title{
+  justify-content: space-between !important;
+  flex-direction: row-reverse !important;
 }
-.ant-modal-title{
-  color:  white !important;
+:where(.css-dev-only-do-not-override-161f05s).ant-drawer .ant-drawer-title {
+  flex: 0 !important;
 }
