@@ -4,9 +4,9 @@ import Collective from '@/icons/Collective';
 import Github from '@/icons/Github';
 import MobileMenu from '@/icons/MobileMenu';
 import Twitter from '@/icons/Twitter';
-import { Button, Drawer, Menu, Modal } from 'antd';
+import { Drawer } from 'antd';
 import React, { useEffect, useState } from 'react'
-import { DownOutlined, SmileOutlined } from '@ant-design/icons';
+import { DownOutlined} from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
 import Moon from '@/icons/Moon';
 import Sun from '@/icons/Sun';
@@ -97,7 +97,7 @@ function Header() {
                         <div className='bg-purple-700 px-2  rounded ml-24'>ctrl K</div>
                     </div>
                     <div className='flex items-center gap-12 lg:gap-4 sm:hidden md:hidden'>
-                        <div className='flex items-center gap-6  lg:gap-4'>
+                        <div className='flex items-center gap-6 lg:gap-4'>
                             <div><Github /></div>
                             <div><Twitter /></div>
                             <div><Collective /></div>
@@ -120,7 +120,7 @@ function Header() {
                                     <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                 </svg>
                             </div>
-                            <ul className={`${showDarkOrLightModeMenu ? "flex" : "hidden"} absolute flex-col bg-white text-gray-900 dark:bg-gray-400 rounded gap-2 overflow-hidden border shadow`}>
+                            <ul className={`${showDarkOrLightModeMenu ? "flex" : "hidden"} absolute -left-[60px] flex-col bg-white text-gray-900 dark:bg-gray-400 rounded gap-2 overflow-hidden border shadow`}>
                                 <li className='hover:bg-gray-100 w-full text-center transition-all cursor-pointer px-4 py-1 flex items-center gap-1' onClick={toggleTheme}>
                                     <Moon />
                                     <span> Dark</span>
@@ -133,7 +133,7 @@ function Header() {
                         </div>
                     </div>
                     <div className='hidden sm:flex md:flex  items-center gap-6'>
-                        <Search isForOpenModal={true}/>
+                        <Search isForOpenModal={true} />
                         <MobileMenu toggleShowMobileMenu={toggleShowMobileMenu} />
                     </div>
                 </div>
@@ -144,7 +144,28 @@ function Header() {
                     <li className='hover:text-gray-50'>Docs</li>
                     <li className='hover:text-gray-50'>Exaples</li>
                     <li className='hover:text-gray-50'>Icons</li>
-                    <li className='hover:text-gray-50'>Themes</li>
+                    <li className='hover:text-gray-50'>
+                        <div className='relative'>
+                            <div className='flex items-center' onClick={toggleShowDarkOrLightModeMenu}>
+                                {
+                                    theme === 'dark' ? <Moon /> : <Sun />
+                                }
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6  ">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                </svg>
+                            </div>
+                            <ul className={`${showDarkOrLightModeMenu ? "flex" : "hidden"} absolute -left-[60px] flex-col bg-white text-gray-900 dark:bg-gray-400 rounded gap-2 overflow-hidden border shadow`}>
+                                <li className='hover:bg-gray-100 w-full text-center transition-all cursor-pointer px-4 py-1 flex items-center gap-1' onClick={toggleTheme}>
+                                    <Moon />
+                                    <span> Dark</span>
+                                </li>
+                                <li className='hover:bg-gray-100 w-full text-center transition-all cursor-pointer px-4 py-1 flex items-center gap-1' onClick={toggleTheme}>
+                                    <Sun />
+                                    <span> Light</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                     <li className='hover:text-gray-50'>Blog</li>
                 </ul>
                 <div className='grid grid-cols-2 gap-4 border-t border-gray-300 pt-4 mt-4'>
